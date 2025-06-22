@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MaNga - Connexion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-white text-[#210C4A] font-sans overflow-x-hidden">
+
+  <!-- Barre supérieure avec heure et menu -->
+  <div class="flex justify-between items-center px-4 pt-4 absolute top-0 left-0 right-0 z-20">
+    <!-- Heure -->
+    <div class="text-xs font-bold">9.41</div>
+    
+    <!-- Menu encadré -->
+    <div class="flex items-center border-2 border-green-500 rounded-lg px-3 py-1 bg-white space-x-3 shadow-md">
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="relative z-10 pt-16 pb-8">
+    <!-- Logo et titre -->
+    <div class="flex flex-col items-center">
+      <div class="flex justify-center">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 overflow-hidden bg-white">
+          <img src="../assets/images/bg-montagne.png" alt="MA-NGA Logo" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <p class="italic mt-4 text-center text-sm">La première bourse dédiée<br>aux Hautes Études Kongo</p>
+      <h1 class="text-lg font-bold mt-1">HEK</h1>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="max-w-sm mx-auto mt-6 px-4">
+      <input type="text" placeholder="Phone Number/Email adress"
+        class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+      <input type="password" placeholder="Password"
+        class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-2 focus:outline-none focus:border-green-500">
+      <div class="text-sm flex justify-between items-center mb-4">
+        <a href="#" class="text-xs text-gray-500 hover:underline">Forgot Password?</a>
+        <a href="#" class="text-sm font-semibold text-gray-700">Log in</a>
+      </div>
+
+      <p class="italic text-amber-700 text-center text-am text-sm mb-2">
+        I confirm that I have read, consent and agree<br>
+        to <span class="font-bold">MaNga Terms of Use</span> and <span class="font-bold">Privacy Policy</span>
+      </p>
+
+      <div class="flex space-x-4 mt-4">
+        <button class="bg-green-500 text-white font-bold rounded-xl w-full py-2">MA-NGU</button>
+        <button class="bg-yellow-400 text-black font-bold rounded-xl w-full py-2">TA-NGU</button>
+      </div>
+
+      <div class="text-center my-4 text-sm">OR</div>
+
+      <!-- Bouton Google -->
+      <button class="w-full flex items-center justify-center border rounded-md border-amber-800 px-4 py-2 text-sm bg-opacity-90 mb-4">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5 mr-2" alt="Google icon" />
+        Log In with Google
+      </button>
+    </div>
+  </div>
+
+  <!-- Fond montagne -->
+<div class="mountain-bg fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+  style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);">
+</div>
+
+</body>
+</html>
