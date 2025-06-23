@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA-NGA - Informations de profil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen relative overflow">
+   <!-- Background Mountain -->
+  <div class="mountain-bg absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);"></div>
+
+  <!-- Header -->
+  <div class="flex justify-between items-center p-4 relative z-20 bg-white">
+    <div class="text-xl font-bold text-gray-800">9.41</div>
+    <div class="flex space-x-1 border-2 border-green-500 rounded-lg">
+      <a href="#" class="text-gray-600 px-3 py-2 hover:text-green-600 transition-colors">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500 self-center"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full px-3 py-2 hover:bg-green-600 transition-colors">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500 self-center"></div>
+      <a href="#" class="text-gray-600 px-3 py-2 hover:text-green-600 transition-colors">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500 self-center"></div>
+      <a href="#" class="text-gray-600 px-3 py-2 hover:text-green-600 transition-colors">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+   <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-18 h-18 sm:w-20 sm:h-20 overflow-hidden bg-white">
+      <img src="../assets/images/bg-montagne.png" 
+           alt="MA-NGA Logo" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="flex justify-center mt-4 relative z-20">
+    <div class="w-3/5 bg-gray-300 rounded-full h-3">
+      <div class="bg-green-500 h-3 rounded-full transition-all duration-500" style="width: 28%;"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="text-center px-6 mt-6 relative z-10 max-w-4xl mx-auto">
+    <h1 class="text-red-600 font-bold text-lg mb-2">VOS INFORMATIONS DE PROFIL MA-NGU</h1>
+    <h2 class="text-[#210C4A] font-bold text-xl mb-8">Le membre de votre famille le plus proche ?</h2>
+
+    <!-- Family Member Options -->
+    <div class="max-w-4xl mx-auto mb-8">
+      <!-- First Row - 7 buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-3">
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Père
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Mère
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Frère
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Soeur
+        </button>
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Oncle
+        </button>
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Tante
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Cousine
+        </button>
+      </div>
+      
+      <!-- Second Row - 5 buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-3">
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Cousin
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[120px]">
+          Belle-famille
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Neveu
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Nièce
+        </button>
+        <button class="family-option bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[140px]">
+          Grand-Mère M
+        </button>
+      </div>
+
+      <!-- Third Row - 4 buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-3">
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[140px]">
+          Grand-Père M
+        </button>
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[140px]">
+          Grand-Père P
+        </button>
+        <button class="family-option bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[140px]">
+          Grand-Mère P
+        </button>
+        <button class="family-option bg-red-300 hover:bg-red-400 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all min-w-[100px]">
+          Autre
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="flex justify-center space-x-2 mb-6">
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+    </div>
+
+    <!-- Navigation Button -->
+    <div class="max-w-md mx-auto pb-8">
+      <button id="nextBtn" class="w-full mb-6 bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-4 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled>
+        Suivant
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const familyOptions = document.querySelectorAll('.family-option');
+    const nextBtn = document.getElementById('nextBtn');
+    let selectedOptions = [];
+
+    familyOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const optionText = this.textContent.trim();
+        
+        // Toggle selection
+        if (this.classList.contains('selected')) {
+          // Deselect
+          this.classList.remove('selected', 'ring-4', 'ring-red-800');
+          this.classList.remove('bg-red-800');
+          // Restore original color
+          if (this.classList.contains('bg-red-300')) {
+            this.classList.add('bg-red-300');
+          } else if (this.classList.contains('bg-red-400')) {
+            this.classList.add('bg-red-400');
+          } else {
+            this.classList.add('bg-red-500');
+          }
+          
+          // Remove from selected array
+          selectedOptions = selectedOptions.filter(item => item !== optionText);
+        } else {
+          // Select
+          this.classList.add('selected', 'ring-4', 'ring-red-600');
+          // Change to darker red when selected
+          this.classList.remove('bg-red-300', 'bg-red-400', 'bg-red-500');
+          this.classList.add('bg-red-800');
+          
+          // Add to selected array
+          selectedOptions.push(optionText);
+        }
+        
+        if (selectedOptions.length > 0) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+        
+        // Add visual feedback
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 200);
+      });
+
+      // Add hover effects
+      option.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1.05)';
+        }
+      });
+
+      option.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1)';
+        }
+      });
+    });
+
+    // Handle next button click
+    nextBtn.addEventListener('click', function() {
+      if (selectedOptions.length > 0) {
+        console.log('Membres de famille sélectionnés:', selectedOptions);
+        // Here you would typically navigate to the next page or submit the form
+        alert(`Vous avez sélectionné: ${selectedOptions.join(', ')}`);
+      }
+    });
+
+    // Add smooth transitions on page load
+    window.addEventListener('load', function() {
+      const options = document.querySelectorAll('.family-option');
+      options.forEach((option, index) => {
+        option.style.opacity = '0';
+        option.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          option.style.transition = 'all 0.3s ease';
+          option.style.opacity = '1';
+          option.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
