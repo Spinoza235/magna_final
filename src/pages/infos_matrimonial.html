@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA-NGA - Informations de profil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen relative overflow-hidden">
+  
+  <!-- Background Mountain -->
+  <div class="mountain-bg absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);"></div>
+
+  <!-- Header -->
+  <div class="flex justify-between items-center p-3 sm:p-4 relative z-10">
+    <div class="text-lg sm:text-xl font-bold text-gray-800">9.41</div>
+    <div class="flex space-x-1 sm:space-x-2 border-2 border-green-500 rounded-lg p-1 sm:p-2">
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+</div>
+
+  <!-- Logo with circular green border -->
+  <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-18 h-18 sm:w-20 sm:h-20 overflow-hidden bg-white">
+      <img src="../assets/images/bg-montagne.png" 
+           alt="MA-NGA Logo" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-4/5 sm:w-3/5 md:w-1/2 lg:w-2/5 bg-gray-300 rounded-full h-3">
+      <div class="bg-green-500 h-3 rounded-full" style="width: 40%;"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="text-center px-4 sm:px-6 lg:px-8 mt-3 sm:mt-4 relative z-10 max-w-4xl mx-auto">
+    <h1 class="text-red-600 font-bold text-base sm:text-lg mb-1 sm:mb-2">VOS INFORMATIONS DE PROFIL MA-NGU</h1>
+    <h2 class="text-[#210C4A] font-bold text-lg sm:text-xl mb-6 sm:mb-8">Quelle est votre situation marital ?</h2>
+
+    <!-- Marital Status Options -->
+    <div class="max-w-lg mx-auto space-y-4 sm:space-y-6 mb-8">
+      <!-- First Row -->
+      <div class="grid grid-cols-2 gap-4">
+        <button class="marital-option bg-red-400 hover:bg-red-500 text-white font-semibold py-4 px-6 rounded-lg text-base sm:text-lg transition-colors">
+          Célibataire
+        </button>
+        <button class="marital-option bg-red-400 hover:bg-red-500 text-white font-semibold py-4 px-6 rounded-lg text-base sm:text-lg transition-colors">
+          Concubin
+        </button>
+      </div>
+      
+      <!-- Second Row -->
+      <div class="grid grid-cols-2 gap-4">
+        <button class="marital-option bg-red-400 hover:bg-red-500 text-white font-semibold py-4 px-6 rounded-lg text-base sm:text-lg transition-colors">
+          Marié(e)
+        </button>
+        <button class="marital-option bg-red-400 hover:bg-red-500 text-white font-semibold py-4 px-6 rounded-lg text-base sm:text-lg transition-colors">
+          Longo
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="flex justify-center space-x-2 mt-4 sm:mt-6 mb-6">
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-red-300 rounded-full"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="max-w-md mx-auto">
+      <div class="flex items-center space-x-4">
+        <!-- Back Arrow -->
+    <div class="flex-shrink-0">
+     <i class="fas fa-angle-left text-4xl text-amber-800 cursor-pointer hover:text-amber-900"></i>
+     </div>
+
+
+        
+    <button id="nextBtn" class="flex-1 bg-red-600 hover:bg-red-800 text-white font-bold text-lg py-3 rounded-full transition-colors" disabled>
+          Suivant
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle marital status selection
+    const maritalOptions = document.querySelectorAll('.marital-option');
+    const nextBtn = document.getElementById('nextBtn');
+    let selectedOption = null;
+
+    maritalOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove selection from all options
+        maritalOptions.forEach(opt => {
+          opt.classList.remove('bg-red-600', 'ring-2', 'ring-red-800');
+          opt.classList.add('bg-red-400');
+        });
+        
+        // Add selection to clicked option
+        this.classList.remove('bg-red-400');
+        this.classList.add('bg-red-600', 'ring-2', 'ring-red-800');
+        
+        selectedOption = this.textContent.trim();
+      });
+    });
+  </script>
+
+</body>
+</html>
