@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA-NGA - MONTANT DE LA BOURSE HEK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen relative overflow-x-hidden">
+  <!-- Background Mountain -->
+  <div class="mountain-bg absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);"></div>
+
+  <!-- Header -->
+  <div class="flex justify-between items-center p-3 sm:p-4 relative z-10">
+    <div class="text-lg sm:text-xl font-bold text-gray-800">9.41</div>
+    <div class="flex items-center space-x-2 border-2 border-green-500 rounded-lg px-2 py-1">
+        <i class="fas fa-envelope text-gray-600 text-sm"></i>
+        <div class="h-5 w-px bg-green-500"></div>
+        <i class="fas fa-user text-white bg-green-500 rounded-full p-1 text-sm"></i>
+        <div class="h-5 w-px bg-green-500"></div>
+        <i class="fas fa-home text-gray-600 text-sm"></i>
+        <div class="h-5 w-px bg-green-500"></div>
+        <i class="fas fa-bars text-gray-600 text-sm"></i>
+      </div>
+  </div>
+
+  <!-- Logo MA-NGA -->
+   <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-18 h-18 sm:w-20 sm:h-20 overflow-hidden bg-white">
+      <img src="../assets/images/bg-montagne.png" 
+           alt="MA-NGA Logo" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="flex justify-center mt-4 relative z-20">
+    <div class="w-3/5 bg-gray-300 rounded-full h-3">
+      <div class="bg-green-500 h-3 rounded-full transition-all duration-500" style="width: 75%;"></div>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="text-center px-4 mt-6 relative z-20 max-w-lg mx-auto pb-8">
+    <h1 class="text-purple-600 font-bold text-base mb-2 uppercase">ENGAGEMENT IDENTITÉ ET MOYEN DE PAIEMENT</h1>
+    <h2 class="text-black font-bold text-lg mb-6">Engagement Morale entre MA-NGU et TA-NGU</h2>
+
+    <!-- Texte avec range vertical à droite -->
+    <div class="relative mb-8 max-w-2xl mx-auto flex gap-4">
+       <div class="flex-1">
+    <p class="text-amber-900 leading-relaxed text-sm sm:text-base text-left">
+      Je m'engage à participer activement au programme des associations affiliées à la Fédération Kimuntu, à respecter les valeurs d'entraide, de bienveillance et de respect précité.
+    </p>
+    </div>
+
+  <!-- Barre verticale à droite -->
+  <div class="flex items-center">
+    <div class="range-container" id="rangeContainer">
+      <div class="range-fill" id="rangeFill" style="height: 70%;"></div>
+      <div class="range-thumb" id="rangeThumb" style="bottom: 70%;"></div>
+    </div>
+  </div>
+ </div>
+
+   <!-- Options d'engagement -->
+    <div class="flex gap-3 mb-8">
+      <button class="engagement-option flex-1 bg-purple-400 hover:bg-purple-600 text-white py-3 px-4 rounded-full text-sm font-medium transition-all">
+        Oui je m'engage
+      </button>
+      <button class="engagement-option flex-1 bg-purple-400 hover:bg-purple-600 text-white py-3 px-4 rounded-full text-sm font-medium transition-all">
+        Non, je préfère réfléchir
+      </button>
+    </div>
+
+    <!-- Indicateurs de progression -->
+    <div class="flex justify-center space-x-2 mb-6">
+      <div class="w-3 h-3 bg-purple-600 rounded-full"></div>
+      <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
+      <div class="w-3 h-3 bg-purple-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+    </div>
+
+    <!-- Bouton Suivant -->
+    <div class=" p-4">
+      <button id="nextBtn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg py-4 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled>
+        Suivant
+      </button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const engagementOptions = document.querySelectorAll('.engagement-option');
+    const nextBtn = document.getElementById('nextBtn');
+    const rangeContainer = document.getElementById('rangeContainer');
+    const rangeFill = document.getElementById('rangeFill');
+    const rangeThumb = document.getElementById('rangeThumb');
+    
+    let selectedEngagement = null;
+    let isDragging = false;
+    let currentValue = 70; // Valeur initiale en pourcentage
+    let rangeInteracted = false; // Nouvelle variable pour tracker l'interaction avec le curseur
+
+    // Fonction pour activer le bouton suivant
+    function checkAndEnableButton() {
+      if (selectedEngagement || rangeInteracted) {
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      }
+    }
+
+    // Gestion des options d'engagement
+    engagementOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        engagementOptions.forEach(opt => {
+          opt.classList.remove('ring-4', 'bg-purple-600');
+        });
+
+        this.classList.add('ring-4', 'bg-purple-600');
+        selectedEngagement = this.textContent.trim();
+        checkAndEnableButton();
+      });
+    });
+
+    // Gestion du range vertical
+    function updateRange(percentage) {
+      rangeFill.style.height = percentage + '%';
+      rangeThumb.style.bottom = percentage + '%';
+      rangeInteracted = true; // Marquer que l'utilisateur a interagi avec le curseur
+      checkAndEnableButton(); // Vérifier si on peut activer le bouton
+    }
+
+    function getPercentageFromEvent(e) {
+      const rect = rangeContainer.getBoundingClientRect();
+      const y = e.clientY || (e.touches && e.touches[0].clientY);
+      const relativeY = y - rect.top;
+      const percentage = Math.max(0, Math.min(100, 100 - (relativeY / rect.height) * 100));
+      return percentage;
+    }
+
+    // Événements de souris
+    rangeContainer.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      currentValue = getPercentageFromEvent(e);
+      updateRange(currentValue);
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        currentValue = getPercentageFromEvent(e);
+        updateRange(currentValue);
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+
+    // Événements tactiles pour mobile
+    rangeContainer.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      currentValue = getPercentageFromEvent(e);
+      updateRange(currentValue);
+      e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', function(e) {
+      if (isDragging) {
+        currentValue = getPercentageFromEvent(e);
+        updateRange(currentValue);
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('touchend', function() {
+      isDragging = false;
+    });
+
+    // Bouton suivant
+    nextBtn.addEventListener('click', function () {
+      const engagementText = selectedEngagement || "Aucune option sélectionnée";
+      alert(`Vous avez choisi : ${engagementText}\nNiveau d'engagement : ${Math.round(currentValue)}%`);
+    });
+  </script>
+
+</body>
+</html>
