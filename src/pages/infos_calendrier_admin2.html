@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA‑NGA – Profil Malika Bamadanu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white min-h-screen font-sans overflow-y-auto relative p-3">
+
+  <!-- ✅ FOND colline -->
+  <div class="mountain-bg absolute inset-x-0 bottom-0 mx-auto w-full sm:w-4/5 md:w-3/5 h-full max-h-[650px] opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c4ebc4 40%, #d4f5d5 100%);"></div>
+
+  <!-- ✅ BARRE DU HAUT ------------------------------------------------------->
+  <header class="flex justify-between items-center p-3 sm:p-4 relative z-10">
+    <span class="text-lg sm:text-xl font-bold text-gray-800">9.41</span>
+
+    <nav class="flex space-x-1 sm:space-x-2 border-2 border-green-500 rounded-lg p-1 sm:p-2">
+      <a href="#" class="text-gray-600 text-base"><i class="fas fa-envelope"></i></a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base"><i class="fas fa-user"></i></a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base"><i class="fas fa-home"></i></a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base"><i class="fas fa-bars"></i></a>
+    </nav>
+  </header>
+
+  <!-- ✅ PROFIL ------------------------------------------------------------->
+  <section class="relative z-10 text-center mt-3 w-full sm:w-4/5 md:w-3/5 mx-auto">
+    <div class="w-20 h-20 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center text-4xl">
+      <i class="fas fa-user"></i>
+    </div>
+
+    <h1 class="mt-3 text-xl font-semibold text-[#864e00]">
+      MALIKA <span class="font-extrabold">BAMADANU</span>
+    </h1>
+    <p class="text-sm italic text-[#864e00] uppercase tracking-wide">Admin</p>
+  </section>
+
+  <!-- ✅ ONGLETS ------------------------------------------------------------->
+  <div class="relative z-10 flex flex-wrap justify-center gap-2 mt-4 w-full sm:w-4/5 md:w-3/5 mx-auto">
+    <button class="px-4 py-1 bg-[#0160df] text-white rounded-md text-[13px] font-semibold shadow">
+      MA‑NGU <br class="hidden sm:block"><span class="text-[11px] font-normal">(Entreprises ou Institutions)</span>
+    </button>
+
+    <button class="px-4 py-1 bg-[#0bb046] text-white rounded-md text-[13px] font-semibold shadow">
+      MA‑NGU <br class="hidden sm:block"><span class="text-[11px] font-normal">(Particuliers)</span>
+    </button>
+
+    <button class="px-4 py-1 bg-[#f8cf10] text-[#864e00] rounded-md text-[13px] font-semibold shadow">
+      TA‑NGU
+    </button>
+
+    <button id="tab-cal" class="px-4 py-1 bg-[#b8a898] text-white rounded-md text-[13px] font-semibold shadow">
+      LE CALENDRIER
+    </button>
+  </div>
+
+  <!-- ✅ CALENDRIER + COLONNE ÉVÉNEMENTS ------------------------------------>
+  <div class="relative z-10 mt-4 w-full sm:w-4/5 md:w-3/5 mx-auto">
+    <div class="border border-[#c9a67b] rounded-md p-6">
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        <!-- Colonne évènements -->
+        <aside class="space-y-3 sm:col-span-1">
+          <h4 class="font-semibold text-lg text-[#472f00] leading-tight">Évènements</h4>
+
+          <div class="flex items-center space-x-3">
+            <span class="w-6 h-6 bg-red-600 rounded-full"></span>
+            <span class="text-[#472f00] font-medium">IA EN MARCHE</span>
+          </div>
+
+          <button class="w-full border border-[#564400] text-[#472f00] rounded-md py-2 text-sm hover:bg-[#f7f3eb] transition">
+            Ajouter Évènement
+          </button>
+          <button class="w-full border border-[#564400] text-[#472f00] rounded-md py-2 text-sm hover:bg-[#f7f3eb] transition">
+            Ajouter Pièce Jointe
+          </button>
+        </aside>
+
+        <!-- Calendrier -->
+        <section class="sm:col-span-2">
+          <h3 class="text-center text-[#472f00] font-bold text-lg tracking-wider mb-4">SEPTEMBER</h3>
+
+          <!-- En‑têtes -->
+          <div class="grid grid-cols-7 text-center text-sm font-semibold text-[#472f00] mb-1">
+            <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+          </div>
+
+          <!-- Jours -->
+          <div class="grid grid-cols-7 gap-2 text-center text-[#472f00] text-sm font-medium">
+            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+            <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+            <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+            <div>22</div>
+            <div class="bg-red-600 text-white font-bold rounded-full w-8 h-8 mx-auto flex items-center justify-center">23</div>
+            <div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+            <div>29</div><div>30</div><div>31</div>
+            <div></div><div></div><div></div><div></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ STATISTIQUES -------------------------------------------------------->
+  <div class="relative z-10 mt-5 text-center w-full sm:w-4/5 md:w-3/5 mx-auto">
+    <p class="font-bold tracking-wide text-[#472f00] space-x-4 text-sm sm:text-base">
+      <span>NOMBRE MA‑NGU : <span class="text-[#0bb046]">15</span></span>
+      <span>NOMBRE TA‑NGU : <span class="text-[#f8cf10]">8</span></span>
+      <span>TOTAL MENSUALITÉ : <span class="text-red-600">13,05 €</span></span>
+    </p>
+  </div>
+
+ 
+</body>
+</html>
