@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MaNga - Inscription</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-white text-[#210C4A] font-sans overflow-x-hidden">
+
+  <!-- Barre supérieure avec heure et menu -->
+  <div class="flex justify-between items-center px-4 pt-4 absolute top-0 left-0 right-0 z-20">
+    <!-- Heure -->
+    <div class="text-xs font-bold">9.41</div>
+    
+    <!-- Menu encadré -->
+    <div class="flex items-center border-2 border-green-500 rounded-lg px-3 py-1 bg-white space-x-3 shadow-md">
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="relative z-10 pt-16 pb-8">
+    <!-- Logo et titre -->
+    <div class="flex flex-col items-center">
+      <div class="flex justify-center">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 overflow-hidden bg-white">
+          <img src="../assets/images/bg-montagne.png" alt="MA-NGA Logo" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <p class="italic mt-4 text-center text-sm">La première bourse dédiée<br>aux Hautes Études Kongo</p>
+      <h1 class="text-lg font-bold mt-1">HEK</h1>
+    </div>
+
+<!-- Formulaire d'inscription -->
+<div class="max-w-sm mx-auto mt-6 px-4">
+<form action="">
+  <!-- Email -->
+  <input type="email" placeholder="Email"
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+
+  <!-- Téléphone -->
+  <input type="tel" placeholder="Téléphone"
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+
+  <!-- Nom -->
+  <input type="text" placeholder="Nom"
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+
+  <!-- Prénom -->
+  <input type="text" placeholder="Prénom"
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+
+  <!-- Mot de passe -->
+  <input type="password" placeholder="Mot de passe"
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500">
+
+  <!-- Sélecteur "Je suis" -->
+  <select
+    class="w-full border border-amber-800 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:border-green-500 text-gray-700">
+    <option value="">Je suis...</option>
+    <option value="ma-ngu">MA-NGU</option>
+    <option value="ta-ngu">TA-NGU</option>
+    <option value="institution">Institution</option>
+  </select>
+
+  <!-- Bouton inscription -->
+  <button class="bg-green-500 text-white font-bold rounded-xl w-full py-2">Créer un compte</button>
+</form>
+  <!-- Texte politique -->
+  <p class="italic text-amber-900 text-center text-sm mt-4 mb-2">
+    En continuant, vous acceptez les<br>
+    <span class="font-bold">Conditions d’utilisation</span> et la <span class="font-bold">Politique de confidentialité</span> de MaNga.
+  </p>
+
+  <!-- Séparateur -->
+  <div class="text-center my-4 text-sm">OU</div>
+
+  <!-- Bouton Google -->
+  <button class="w-full flex items-center justify-center border rounded-md border-amber-800 px-4 py-2 text-sm bg-opacity-90 mb-4">
+    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5 mr-2" alt="Google icon" />
+    S'inscrire avec Google
+  </button>
+</div>
+
+  </div>
+
+  <!-- Fond montagne -->
+  <div class="mountain-bg fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+    style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);">
+  </div>
+
+</body>
+</html>
