@@ -1,12 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>MA-NGA - MONTANT DE LA BOURSE HEK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .range-container {
+      position: relative;
+      width: 6px;
+      height: 120px;
+      background-color: #ddd;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+
+    .range-fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #a020f0;
+      border-radius: 3px;
+    }
+
+    .range-thumb {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background-color: #a020f0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="bg-white min-h-screen relative overflow-x-hidden">
   <!-- Background Mountain -->
@@ -51,21 +81,21 @@
     <!-- Texte avec range vertical à droite -->
     <div class="relative mb-8 max-w-2xl mx-auto flex gap-4">
        <div class="flex-1">
-    <p class="text-amber-900 leading-relaxed text-sm sm:text-base text-left">
-      Je m'engage à participer activement au programme des associations affiliées à la Fédération Kimuntu, à respecter les valeurs d'entraide, de bienveillance et de respect précité.
-    </p>
+        <p class="text-amber-900 leading-relaxed text-sm sm:text-base text-left">
+          Je m'engage à participer activement au programme des associations affiliées à la Fédération Kimuntu, à respecter les valeurs d'entraide, de bienveillance et de respect précité.
+        </p>
+      </div>
+
+      <!-- Barre verticale à droite -->
+      <div class="flex items-center">
+        <div class="range-container" id="rangeContainer">
+          <div class="range-fill" id="rangeFill" style="height: 70%;"></div>
+          <div class="range-thumb" id="rangeThumb" style="bottom: 70%;"></div>
+        </div>
+      </div>
     </div>
 
-  <!-- Barre verticale à droite -->
-  <div class="flex items-center">
-    <div class="range-container" id="rangeContainer">
-      <div class="range-fill" id="rangeFill" style="height: 70%;"></div>
-      <div class="range-thumb" id="rangeThumb" style="bottom: 70%;"></div>
-    </div>
-  </div>
- </div>
-
-   <!-- Options d'engagement -->
+    <!-- Options d'engagement -->
     <div class="flex gap-3 mb-8">
       <button class="engagement-option flex-1 bg-purple-400 hover:bg-purple-600 text-white py-3 px-4 rounded-full text-sm font-medium transition-all">
         Oui je m'engage
@@ -98,13 +128,12 @@
     const rangeContainer = document.getElementById('rangeContainer');
     const rangeFill = document.getElementById('rangeFill');
     const rangeThumb = document.getElementById('rangeThumb');
-    
+
     let selectedEngagement = null;
     let isDragging = false;
-    let currentValue = 70; // Valeur initiale en pourcentage
-    let rangeInteracted = false; // Nouvelle variable pour tracker l'interaction avec le curseur
+    let currentValue = 70;
+    let rangeInteracted = false;
 
-    // Fonction pour activer le bouton suivant
     function checkAndEnableButton() {
       if (selectedEngagement || rangeInteracted) {
         nextBtn.disabled = false;
@@ -112,7 +141,6 @@
       }
     }
 
-    // Gestion des options d'engagement
     engagementOptions.forEach(option => {
       option.addEventListener('click', function () {
         engagementOptions.forEach(opt => {
@@ -125,12 +153,11 @@
       });
     });
 
-    // Gestion du range vertical
     function updateRange(percentage) {
       rangeFill.style.height = percentage + '%';
       rangeThumb.style.bottom = percentage + '%';
-      rangeInteracted = true; // Marquer que l'utilisateur a interagi avec le curseur
-      checkAndEnableButton(); // Vérifier si on peut activer le bouton
+      rangeInteracted = true;
+      checkAndEnableButton();
     }
 
     function getPercentageFromEvent(e) {
@@ -141,7 +168,6 @@
       return percentage;
     }
 
-    // Événements de souris
     rangeContainer.addEventListener('mousedown', function(e) {
       isDragging = true;
       currentValue = getPercentageFromEvent(e);
@@ -160,7 +186,6 @@
       isDragging = false;
     });
 
-    // Événements tactiles pour mobile
     rangeContainer.addEventListener('touchstart', function(e) {
       isDragging = true;
       currentValue = getPercentageFromEvent(e);
@@ -180,7 +205,6 @@
       isDragging = false;
     });
 
-    // Bouton suivant
     nextBtn.addEventListener('click', function () {
       const engagementText = selectedEngagement || "Aucune option sélectionnée";
       alert(`Vous avez choisi : ${engagementText}\nNiveau d'engagement : ${Math.round(currentValue)}%`);
