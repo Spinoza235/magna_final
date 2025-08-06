@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA-NGA - Niveau scolaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen relative overflow-hidden">
+   <!-- Background Mountain -->
+  <div class="mountain-bg absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);"></div>
+ 
+  <!-- Header -->
+  <div class="flex justify-between items-center p-3 sm:p-4 relative z-10">
+    <div class="text-lg sm:text-xl font-bold text-gray-800">9.41</div>
+    <div class="flex space-x-1 sm:space-x-2 border-2 border-green-500 rounded-lg p-1 sm:p-2">
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+</div>
+  <!-- Content Container -->
+    <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-18 h-18 sm:w-20 sm:h-20 overflow-hidden bg-white">
+      <img src="../../assets/images/bg-montagne.png" 
+           alt="MA-NGA Logo" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+
+    <!-- Progress Bar -->
+    <div class="flex justify-center mt-4 relative z-20">
+      <div class="w-3/5 bg-gray-300 rounded-full h-3">
+        <div class="bg-green-500 h-3 rounded-full transition-all duration-500" style="width: 42%;"></div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="text-center px-6 mt-6 relative z-20 max-w-4xl mx-auto pb-8">
+      <h1 class="text-red-600 font-bold text-lg mb-2">VOS INFORMATIONS DE PROFIL MA-NGU</h1>
+      <h2 class="text-[#210C4A] font-bold text-xl mb-8">Qu-est ce qui vous motive à devenir DONATEUR ?</h2>
+
+<!-- Education Level Options -->
+<div class="max-w-3xl mx-auto mb-4">
+  <!-- First Row - 4 buttons -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 px-4">
+    <button class="education-option bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg transition-all w-full text-center">
+      Trouver des employés
+    </button>
+    <button class="education-option bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg transition-all w-full text-center">
+      Faire connaitre mon activité
+    </button>
+    <button class="education-option bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg transition-all w-full text-center">
+      La Santé des Familles
+    </button>
+    <button class="education-option bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg transition-all w-full text-center">
+      Sensibiliser Partager
+    </button>
+  </div>
+  
+  <!-- Second Row - 2 buttons centered -->
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 px-4 max-w-md mx-auto">
+    <button class="education-option w-full bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg text-center transition-all">
+      L'Education
+    </button>
+    <button class="education-option w-full bg-yellow-200 hover:bg-yellow-400 text-gray-800 py-2 px-4 rounded-lg text-lg text-center transition-all">
+      Faire des Partenariats
+    </button>
+  </div>
+</div>
+
+     
+        <div class="flex justify-center space-x-2 mb-2">
+          <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-yellow-100  rounded-full"></div>
+          <div class="w-3 h-3 bg-yellow-100  rounded-full"></div>
+          <div class="w-3 h-3 bg-yellow-100  rounded-full"></div>
+        </div>
+
+
+        <div class="flex items-center justify-between max-w-md mx-auto">
+      
+          <div class="flex-grow ml-4">
+            <button id="nextBtn" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-xl py-3 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled>
+              Suivant
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle education level selection (single selection for this page)
+    const educationOptions = document.querySelectorAll('.education-option');
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+    let selectedOption = null;
+
+    educationOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove selection from all options
+        educationOptions.forEach(opt => {
+          opt.classList.remove('selected', 'ring-4', 'ring-yellow-600');
+          opt.classList.remove('bg-yellow-500');
+          opt.classList.add('bg-yellow-200');
+        });
+        
+        // Add selection to clicked option
+        this.classList.add('selected', 'ring-4', 'ring-yellow-600');
+        this.classList.remove('bg-yellow-200');
+        this.classList.add('bg-yellow-500');
+        
+        selectedOption = this.textContent.trim();
+        
+        // Enable next button
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        
+        // Add visual feedback
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 200);
+      });
+
+      // Add hover effects
+      option.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1.05)';
+        }
+      });
+
+      option.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1)';
+        }
+      });
+    });
+
+    // Handle next button click
+    nextBtn.addEventListener('click', function() {
+      if (selectedOption) {
+        console.log('Niveau scolaire sélectionné:', selectedOption);
+        alert(`Vous avez sélectionné: ${selectedOption}`);
+      }
+    });
+
+    // Handle back button click
+    backBtn.addEventListener('click', function() {
+      console.log('Retour à la page précédente');
+      // Here you would typically navigate to the previous page
+      alert('Retour à la page précédente');
+    });
+
+    // Add smooth transitions on page load
+    window.addEventListener('load', function() {
+      const options = document.querySelectorAll('.education-option');
+      options.forEach((option, index) => {
+        option.style.opacity = '0';
+        option.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          option.style.transition = 'all 0.3s ease';
+          option.style.opacity = '1';
+          option.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  </script>
+
+</body>
+</html>
