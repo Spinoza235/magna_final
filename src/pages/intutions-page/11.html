@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MA-NGA - MONTANT DE LA BOURSE HEK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen relative overflow">
+  <!-- Background Mountain -->
+  <div class="mountain-bg absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full sm:w-4/5 md:w-3/5 h-80 sm:h-72 md:h-80 lg:h-96 opacity-70 z-0"
+       style="background: linear-gradient(to top, #8fbc8f 0%, #c1f8c1 40%, #bef5c7 100%);"></div>
+
+  <!-- Header -->
+  <div class="flex justify-between items-center p-3 sm:p-4 relative z-10">
+    <div class="text-lg sm:text-xl font-bold text-gray-800">9.41</div>
+    <div class="flex space-x-1 sm:space-x-2 border-2 border-green-500 rounded-lg p-1 sm:p-2">
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-white bg-green-500 rounded-full p-1 text-base">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="h-6 w-px bg-green-500"></div>
+      <a href="#" class="text-gray-600 text-base">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="flex justify-center mt-1 sm:mt-2 relative z-10">
+    <div class="w-18 h-18 sm:w-20 sm:h-20 overflow-hidden bg-white">
+      <img src="../../assets/images/bg-montagne.png" 
+           alt="MA-NGA Logo" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="flex justify-center mt-4 relative z-20">
+    <div class="w-3/5 bg-gray-300 rounded-full h-3">
+      <div class="bg-green-500 h-3 rounded-full transition-all duration-500" style="width: 50%;"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="text-center px-6 mt-6 relative z-20 max-w-4xl mx-auto pb-8">
+    <h1 class="text-blue-600 font-bold text-lg mb-2">DISPONIBILITÉS ET MONTANT DE LA BOURSE HEK</h1>
+    <h2 class="text-gray-800 font-bold text-xl mb-8">Je prefere soutenir un profil qui s’interesse
+à ces domaines d’activités :</h2>
+
+    <!-- Options Grid -->
+    <!-- Options Grid avec les boutons de l'image -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8">
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    La Santé
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    L’Education
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    La Famille
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    Le BTP
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    Nouvelle Technologie
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    La Politique
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    Autres
+  </button>
+  <button class="bourse-option bg-violet-400 hover:bg-violet-500 text-white py-6 px-4 rounded-lg text-base font-semibold transition-all">
+    Art, Ecriture
+  </button>
+</div>
+
+
+    <!-- Progress Indicators -->
+    <div class="flex justify-center space-x-2 mb-6">
+      <div class="w-3 h-3 bg-blue-600 rounded-full"></div>
+      <div class="w-3 h-3 bg-blue-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+      <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+    </div>
+
+    <!-- Bottom Section with Button -->
+    <div class="p-6 max-w-2xl mx-auto">
+      <div class="flex items-center justify-center space-x-10 mb-8">
+          <div class="">
+          <button class="text-gray-400 hover:text-gray-600 transition-colors">
+            <i class="fas fa-chevron-left text-2xl"></i>
+          </button>
+        </div>
+        <div class="flex-grow">
+          <button id="nextBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-serif text-xl py-4 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled>
+            Suivant
+          </button>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle bourse option selection (multiple selection allowed)
+    const bourseOptions = document.querySelectorAll('.bourse-option');
+    const nextBtn = document.getElementById('nextBtn');
+    let selectedOptions = [];
+
+    bourseOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const optionText = this.textContent.trim();
+        
+        if (this.classList.contains('selected')) {
+          // Deselect option
+          this.classList.remove('selected', 'ring-4', 'ring-violet-600');
+          this.classList.remove('bg-violet-600');
+          this.classList.add('bg-violet-400');
+          selectedOptions = selectedOptions.filter(opt => opt !== optionText);
+        } else {
+          // Select option
+          this.classList.add('selected', 'ring-4', 'ring-violet-600');
+          this.classList.remove('bg-violet-400');
+          this.classList.add('bg-violet-600');
+          selectedOptions.push(optionText);
+        }
+        
+        // Enable/disable next button based on selections (minimum 2 required)
+        if (selectedOptions.length >= 2) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+        
+        // Add visual feedback
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          this.style.transform = this.classList.contains('selected') ? 'scale(1.05)' : '';
+        }, 200);
+      });
+
+      // Add hover effects
+      option.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1.02)';
+        }
+      });
+
+      option.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('selected')) {
+          this.style.transform = 'scale(1)';
+        }
+      });
+    });
+
+    // Handle next button click
+    nextBtn.addEventListener('click', function() {
+      if (selectedOptions.length >= 2) {
+        console.log('Critères sélectionnés:', selectedOptions);
+        alert(`Vous avez sélectionné ${selectedOptions.length} critères:\n${selectedOptions.join('\n')}`);
+      }
+    });
+
+    // Add smooth transitions on page load
+    window.addEventListener('load', function() {
+      const options = document.querySelectorAll('.bourse-option');
+      options.forEach((option, index) => {
+        option.style.opacity = '0';
+        option.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          option.style.transition = 'all 0.3s ease';
+          option.style.opacity = '1';
+          option.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
+    });
+  </script>
+
+</body>
+</html>
